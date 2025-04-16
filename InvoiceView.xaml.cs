@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using ToDoApp.Data;
 
 namespace ToDoApp
 {
@@ -20,9 +21,10 @@ namespace ToDoApp
     /// </summary>
     public partial class InvoiceView : UserControl
     {
-        public InvoiceView()
+        public InvoiceView(User user)
         {
             InitializeComponent();
+            this.DataContext = user;
         }
 
         private void AddToDoButton_Click(object sender, RoutedEventArgs e)

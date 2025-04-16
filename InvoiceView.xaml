@@ -23,8 +23,11 @@
             <RowDefinition Height="75"/>
             <RowDefinition Height="10"/>
             <RowDefinition Height="50"/>
+            <RowDefinition Height="30"/>
             <RowDefinition Height="10"/>
         </Grid.RowDefinitions>
+
+        <Label Grid.Column="1" Grid.Row="6" Content="{Binding WelcomeUser, Mode=OneWay}" />
 
         <Button Click="AddToDoButton_Click" Grid.Row="5" Grid.Column="1" Content="Create ToDo"/>
         <TextBox x:Name="ToDoInput" Grid.Row="3" Grid.Column="1" Background="#FFF1EFEF" />

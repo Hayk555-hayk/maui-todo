@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using ToDoApp.Data;
 
 namespace ToDoApp
 {
@@ -30,14 +31,18 @@ namespace ToDoApp
             string name = UserName.Text;
             string password = UserPassword.Password;
 
-            if(name != "name" && password != "password")
+            User user = new User(name, password);
+
+            this.DataContext = user;
+
+            if(!user.CheckPass())
             {
                 MessageBox.Show("Incorrect user name or password");
                 return;    
             }
 
             Window window = Window.GetWindow(this);
-            window.Content = new InvoiceView();
+            window.Content = new InvoiceView(user);
         }
     }
 }
