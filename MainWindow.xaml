@@ -7,6 +7,8 @@
         mc:Ignorable="d"
         Title="ToDo APP" Height="450" Width="400" ResizeMode="NoResize">
     <Grid>
+        <ContentControl x:Name="MainContent"/>
+        
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="10"/>
             <ColumnDefinition Width="*"/>
