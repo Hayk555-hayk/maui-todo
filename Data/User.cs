@@ -14,8 +14,6 @@ namespace ToDoApp.Data
         protected string _userName;
         private string _password;
 
-        public string WelcomeUser { get { return $"Hello dear {Name}"; } }
-
         public string Name { get { return _userName; } set { _userName = value; } }
 
         public User(string name, string password)
@@ -35,5 +33,6 @@ namespace ToDoApp.Data
 
             return true;
         }
+
     }
 }

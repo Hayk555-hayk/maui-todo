@@ -46,5 +46,16 @@ namespace ToDoApp
 
             ToDoInput.Clear();
         }
+
+        private void ChangeName_Click(object sender, RoutedEventArgs e)
+        {
+            var user = this.DataContext as User;
+
+
+            string name = NewName.Text;
+
+            user.Name = name;
+        }
+
     }
 }
