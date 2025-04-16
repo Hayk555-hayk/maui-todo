@@ -21,8 +21,22 @@ public partial class MainWindow : Window
         InitializeComponent();
     }
 
-    private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+    private void AddToDoButton_Click(object sender, RoutedEventArgs e)
     {
+        string todoText = ToDoInput.Text;
 
+        if (string.IsNullOrEmpty(todoText)) {
+            return;
+        }
+
+        TextBlock todoItem = new TextBlock
+        {
+            Text = todoText,
+            Margin = new Thickness(10)
+        };
+
+        ToDoList.Children.Add(todoItem);
+
+        ToDoInput.Clear();
     }
 }
