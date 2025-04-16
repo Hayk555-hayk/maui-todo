@@ -16,28 +16,33 @@ using System.Windows.Shapes;
 namespace ToDoApp
 {
     /// <summary>
-    /// Interaction logic for LoginView.xaml
+    /// Interaction logic for InvoiceView.xaml
     /// </summary>
-    public partial class LoginView : UserControl
+    public partial class InvoiceView : UserControl
     {
-        public LoginView()
+        public InvoiceView()
         {
             InitializeComponent();
         }
 
-        private void LoginButton_Clicked(object sender, RoutedEventArgs e)
+        private void AddToDoButton_Click(object sender, RoutedEventArgs e)
         {
-            string name = UserName.Text;
-            string password = UserPassword.Password;
+            string todoText = ToDoInput.Text;
 
-            if(name != "name" && password != "password")
+            if (string.IsNullOrEmpty(todoText))
             {
-                MessageBox.Show("Incorrect user name or password");
-                return;    
+                return;
             }
 
-            Window window = Window.GetWindow(this);
-            window.Content = new InvoiceView();
+            TextBlock todoItem = new TextBlock
+            {
+                Text = todoText,
+                Margin = new Thickness(10)
+            };
+
+            ToDoList.Children.Add(todoItem);
+
+            ToDoInput.Clear();
         }
     }
 }

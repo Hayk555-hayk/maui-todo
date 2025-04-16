@@ -19,24 +19,8 @@ public partial class MainWindow : Window
     public MainWindow()
     {
         InitializeComponent();
+
+        MainContent.Content = new LoginView();
     }
 
-    private void AddToDoButton_Click(object sender, RoutedEventArgs e)
-    {
-        string todoText = ToDoInput.Text;
-
-        if (string.IsNullOrEmpty(todoText)) {
-            return;
-        }
-
-        TextBlock todoItem = new TextBlock
-        {
-            Text = todoText,
-            Margin = new Thickness(10)
-        };
-
-        ToDoList.Children.Add(todoItem);
-
-        ToDoInput.Clear();
-    }
 }

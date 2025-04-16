@@ -15,13 +15,22 @@
 
         <Grid.RowDefinitions>
             <RowDefinition Height="10" />
-            <RowDefinition Height="auto" />
-            <RowDefinition Height="25" />
-            <RowDefinition Height="50" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
             <RowDefinition Height="10" />
         </Grid.RowDefinitions>
 
-        <Label Grid.Column="1" Grid.Row="1" Content="LOGIN" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" />
-        <Button Content="loin" Grid.Column="1" Grid.Row="3"/>
+        <Label Grid.Column="1" Grid.Row="1" Content="Name" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" />
+        <TextBox x:Name="UserName" Grid.Column="1" Grid.Row="2" />
+
+        <Label Grid.Column="1" Grid.Row="3" Content="Passowrd" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" />
+        <PasswordBox x:Name="UserPassword" Grid.Column="1" Grid.Row="4" />
+        
+        <Button Click="LoginButton_Clicked" Content="loin" Grid.Column="1" Grid.Row="6"/>
     </Grid>
 </UserControl>
